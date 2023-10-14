@@ -1,0 +1,60 @@
+/* Center the form and align its items using flexbox */
+.new-tweet form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Style the input box */
+.new-tweet label {
+  /* Push label text inside the input */
+  display: none;
+}
+
+.new-tweet textarea {
+  border: none;
+  border-bottom: 1px solid #000;
+  width: 100%;
+  padding: 5px;
+  margin: 5px;
+  background-color: #f4f1ec;
+  font-size: 15px;
+  font-family: 'Source Sans 3';
+  font-weight: bold;
+}
+
+/* Align the counter to the right */
+.new-tweet .counter {
+
+  font-family: 'Bungee', sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  color: black;
+}
+
+.new-tweet .counter.counter-exceeded {
+  color: red; /* Set the color to red when the limit is exceeded */
+}
+
+/* Style the tweet button with a blue background and align to the left */
+.new-tweet button {
+  font-style: normal;
+  font-family: 'Bungee', sans-serif;
+  background-color: #4056A1;
+  font-weight: 100;
+  font-size: 15px;
+  color: white;
+  padding: 5px;
+  border: none;
+  border-radius: 1px;
+  cursor: pointer;
+  align-self: flex-start;
+}
+
+.buttonAndCounter {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  /* align-content: center; */
+  /* flex-wrap: nowrap; */
+}
