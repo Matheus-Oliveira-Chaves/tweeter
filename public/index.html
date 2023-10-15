@@ -27,10 +27,6 @@
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-  <!-- App JS -->
-  <script src="scripts/jquery.min.js"></script> 
-<script src="scripts/composer-char-counter.js"></script>
-  <script type="text/javascript" src="/scripts/client.js"></script>
 </head>
 
 
@@ -73,8 +69,10 @@
     <section class="tweet-conatiner">
       <article class="tweet">
         <header>
-          <img src="profile-image.jpg" alt="Profile Image" class="profile-image">
-          <h3 class="user-name">John Doe</h3>
+          <div>
+            <img src="profile-image.jpg" alt="Profile Image" class="profile-image">
+            <h3 class="user-name">John Doe</h3>
+          </div>
           <span class="user-handle">@johndoe</span>
         </header>
         <p class="tweet-content">This is an example tweet! Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -82,8 +80,8 @@
           <span class="tweet-timestamp">2h ago</span>
           <div class="tweet-actions">
             <i class="far fa-flag"></i>
-            <i class="far fa-heart"></i>
             <i class="fas fa-retweet"></i>
+            <i class="far fa-heart"></i>
           </div>
         </footer>
       </article>
@@ -94,6 +92,10 @@
 
 
   </main>
+  <!-- App JS -->
+  <script src="scripts/jquery.min.js"></script> 
+  <script src="scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="/scripts/client.js"></script>
 </body>
 
 </html>
