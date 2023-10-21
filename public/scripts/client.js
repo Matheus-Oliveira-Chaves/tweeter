@@ -54,6 +54,15 @@ $(document).ready(function() {
   const $form = $('.tweet-form');
   $form.submit(function(event) {
     event.preventDefault();
+    const tweetContent = $('#tweet-text').val();
+    if (!tweetContent) {
+      alert('Tweet content cannot be empty.');
+      return;
+    }
+    if (tweetContent.length > 140) {
+      alert('Tweet content exceeds the character limit.');
+      return;
+    }
     const formData = $(this).serialize();
     $.ajax({
       type: 'POST',
@@ -62,6 +71,7 @@ $(document).ready(function() {
       success: function() {
         // Do something after the tweet is successfully posted
         console.log('Tweet was successfully posted!');
+        loadTweets();
         // You may want to reload the tweets here if needed
         // or you can handle the new tweet insertion in a different way
       },
