@@ -32,7 +32,7 @@ $(document).ready(function() {
   const renderTweets = function(tweets) {
     for (let tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $('.tweets-container').append($tweet);
+      $('.tweets-container').prepend($tweet);
     }
   };
 
@@ -69,19 +69,18 @@ $(document).ready(function() {
       url: '/tweets',
       data: formData,
       success: function() {
-        // Do something after the tweet is successfully posted
-        console.log('Tweet was successfully posted!');
-        loadTweets();
-        // You may want to reload the tweets here if needed
-        // or you can handle the new tweet insertion in a different way
+        loadTweets(); // Reload tweets on successful submission
+        $('#tweet-text').val(''); // Clear the tweet text area
       },
       error: function(error) {
-        // Handle error if the tweet post request fails
         console.error('Error posting the tweet', error);
       }
     });
   });
-  loadTweets(); 
+
+  loadTweets();
+
+  
 });
 
 
