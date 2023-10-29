@@ -4,7 +4,7 @@ Tweeter is single-page Twitter clone made to show my front-end skills in HTML, J
 
 ## Screenshots
 
-!["Screenshot of tweet in screen smaller than 1024px with empty tweet box alert"]
+!["Screenshot of tweet in screen smaller than 1024px with empty tweet box alert"] (https://github.com/Matheus-Oliveira-Chaves/tweeter/blob/master/public/docs/1024-%20and%20empty%20alert.png)
 
 
 ## Getting Started
