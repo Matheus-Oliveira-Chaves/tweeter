@@ -6,7 +6,7 @@ $(document).ready(function() {
     
     counter.text(remainingCharacters);
 
-    // Add or remove the .counter-exceeded class based on the character count
+    
     if (remainingCharacters < 0) {
       counter.addClass('counter-exceeded');
     } else {

@@ -1,31 +1,26 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
 
-$(document).ready(function() {
+$(document).ready(function () {
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     const $errorContainer = $('.error-message');
     $errorContainer.hide();
-  
-    const showError = function(message) {
+
+    const showError = function (message) {
       $errorContainer.html('&#9888; ' + message + ' &#9888;');
       $errorContainer.slideDown();
     };
-  
-    const hideError = function() {
+
+    const hideError = function () {
       $errorContainer.slideUp();
     };
 
-  const escape = function(str) {
-    let div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
-  };
-  const createTweetElement = function(tweet) {
-    const $tweet = `
+    const escape = function (str) {
+      let div = document.createElement("div");
+      div.appendChild(document.createTextNode(str));
+      return div.innerHTML;
+    };
+    const createTweetElement = function (tweet) {
+      const $tweet = `
       <article class="tweet">
         <header>
         <div class="left-side">
@@ -49,63 +44,63 @@ $(document).ready(function() {
         </footer>
       </article>
     `;
-    return $tweet;
-  };
+      return $tweet;
+    };
 
-  const renderTweets = function(tweets) {
-    for (let tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      $('.tweets-container').prepend($tweet);
-    }
-  };
-
-  const loadTweets = function() {
-    $.ajax({
-      url: '/tweets',
-      method: 'GET',
-      dataType: 'json',
-      success: function(data) {
-        renderTweets(data);
-      },
-      error: function(error) {
-        console.error('Error fetching tweets:', error);
+    const renderTweets = function (tweets) {
+      for (let tweet of tweets) {
+        const $tweet = createTweetElement(tweet);
+        $('.tweets-container').prepend($tweet);
       }
-    });
-  };
-  
+    };
 
-  const $form = $('.tweet-form');
-  $form.submit(function(event) {
-    event.preventDefault();
-    hideError();
-    const tweetContent = $('#tweet-text').val();
-    if (!tweetContent) {
-      showError('Tweet content cannot be empty.');
-      return;
-    }
-    if (tweetContent.length > 140) {
-      showError('Tweet content exceeds the character limit.');
-      return;
-    }
-    const formData = $(this).serialize();
-    $.ajax({
-      type: 'POST',
-      url: '/tweets',
-      data: formData,
-      success: function() {
-        loadTweets(); // Reload tweets on successful submission
-        $('#tweet-text').val(''); // Clear the tweet text area
-      },
-      error: function(error) {
-        console.error('Error posting the tweet', error);
+    const loadTweets = function () {
+      $.ajax({
+        url: '/tweets',
+        method: 'GET',
+        dataType: 'json',
+        success: function (data) {
+          renderTweets(data);
+        },
+        error: function (error) {
+          console.error('Error fetching tweets:', error);
+        }
+      });
+    };
+
+
+    const $form = $('.tweet-form');
+    $form.submit(function (event) {
+      event.preventDefault();
+      hideError();
+      const tweetContent = $('#tweet-text').val();
+      if (!tweetContent) {
+        showError('Tweet content cannot be empty.');
+        return;
       }
+      if (tweetContent.length > 140) {
+        showError('Tweet content exceeds the character limit.');
+        return;
+      }
+      const formData = $(this).serialize();
+      $.ajax({
+        type: 'POST',
+        url: '/tweets',
+        data: formData,
+        success: function () {
+          loadTweets();
+          $('#tweet-text').val('');
+        },
+        error: function (error) {
+          console.error('Error posting the tweet', error);
+        }
+      });
     });
+
+    loadTweets();
+
+
   });
-
-  loadTweets();
-
-  
-});
 });
 
 

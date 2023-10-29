@@ -1,8 +1,4 @@
-/*
- * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * https://css-tricks.com/international-box-sizing-awareness-day/
- * Do not modify these two selectors, please
- */
+
 html {
   box-sizing: border-box;
 }
@@ -10,9 +6,6 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
 
 body {
   color: #545149;
@@ -25,17 +18,15 @@ body {
 
 
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
+
  .container {
   margin-top: 120px;
-  margin-right: 10px; /* Create space for the navbar */
+  margin-right: 10px; 
  }
 
  main {
-  width: 95%; /* Set the width to 90% of its parent element */
-  margin: 0 auto; /* Center-align the element horizontally */
+  width: 
+  margin: 0 auto; 
   background-color: #f4f1ec;
   word-wrap: break-word;
 }
@@ -50,7 +41,7 @@ body {
     height: 520px;
     width: 100%;
   }
-  /* Add your smaller layout styles here */
+
 }
 @media (min-width: 1024px) {
   body{
@@ -66,13 +57,13 @@ body {
   }
 
   nav {
-    background-color: #4056A1; /* Default background color */
+    background-color: #4056A1; 
   }
 
   .container {
-    margin-top: 180px; /* Create space for the navbar */
+    margin-top: 180px;
    }
 
   
-  /* Add your desktop layout styles here */
+ 
 }

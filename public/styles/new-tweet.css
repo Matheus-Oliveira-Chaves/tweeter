@@ -1,4 +1,4 @@
-/* Center the form and align its items using flexbox */
+
 
 .new-tweet {
   display: flex;
@@ -12,9 +12,9 @@
   margin-bottom: 10px;
 }
 
-/* Style the input box */
+
 .new-tweet label {
-  /* Push label text inside the input */
+  
   display: none;
 }
 
@@ -30,7 +30,7 @@
   font-weight: bold;
 }
 
-/* Align the counter to the right */
+
 .new-tweet .counter {
 
   font-family: 'Bungee', sans-serif;
@@ -40,10 +40,10 @@
 }
 
 .new-tweet .counter.counter-exceeded {
-  color: red; /* Set the color to red when the limit is exceeded */
+  color: red; 
 }
 
-/* Style the tweet button with a blue background and align to the left */
+
 .new-tweet button {
   font-style: normal;
   font-family: 'Bungee', sans-serif;
@@ -62,8 +62,7 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  /* align-content: center; */
-  /* flex-wrap: nowrap; */
+  
 }
 
 .error-message {

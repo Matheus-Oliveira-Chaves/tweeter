@@ -6,7 +6,7 @@
   font-family: 'Source Sans 3';
   font-weight: bold;
   font-size: 15px;
-  transition: box-shadow 0.3s; /* Adding transition for smooth effect */
+  transition: box-shadow 0.3s; 
   display: flex;
   flex-direction: column;
 
@@ -65,25 +65,24 @@
   color: #4056A1;
   margin-left: 10px;
   cursor: pointer;
-  transition: color 0.3s; /* Adding transition for smooth color change */
+  transition: color 0.3s; 
 }
 
-/* Hover state styles */
+
 .tweet:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Adding box shadow on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
 }
 
-/* Hover state for the flag icon */
+
 .icons .fa-flag:hover {
-  color: rgba(255, 217, 0, 0.63); /* Changing color to gold on hover */
+  color: rgba(255, 217, 0, 0.63); 
 }
 
-/* Hover state for the heart icon */
+
 .icons .fa-heart:hover {
-  color: rgba(255, 217, 0, 0.63); /* Changing color to gold on hover */
+  color: rgba(255, 217, 0, 0.63); 
 }
 
-/* Hover state for the retweet icon */
 .icons .fa-retweet:hover {
-  color: rgba(255, 217, 0, 0.63); /* Changing color to gold on hover */
+  color: rgba(255, 217, 0, 0.63); 
 }

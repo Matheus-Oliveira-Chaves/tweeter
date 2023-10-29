@@ -1,19 +1,19 @@
 
 nav {
-  position: fixed; /* Make the navbar fixed */
-  top: 0; /* Position it at the top of the screen */
+  position: fixed; 
+  top: 0; 
   left: 0;
   right: 0;
-  height: 120px; /* Set the height to 120 pixels */
-  width: 100%; /* Full width of the viewport */
+  height: 120px; 
+  width: 100%; 
   
-  color: #FFFFFF; /* Default font color */
-  font-family: 'Bungee', sans-serif; /* Use 'Bungee' font-family */
-  padding: 0 1.5em; /* 1.5ems of space on the right and left */
+  color: #FFFFFF; 
+  font-family: 'Bungee', sans-serif; 
+  padding: 0 1.5em; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 100; /* Ensure it appears above other content */
+  z-index: 100; 
 }
 
 .tweet-button {
