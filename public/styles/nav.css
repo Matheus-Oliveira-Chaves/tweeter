@@ -6,7 +6,7 @@ nav {
   right: 0;
   height: 120px; /* Set the height to 120 pixels */
   width: 100%; /* Full width of the viewport */
-  background-color: #4056A1; /* Default background color */
+  
   color: #FFFFFF; /* Default font color */
   font-family: 'Bungee', sans-serif; /* Use 'Bungee' font-family */
   padding: 0 1.5em; /* 1.5ems of space on the right and left */
@@ -27,5 +27,21 @@ font-weight: bold
 
 .fa-solid {
   color: red;
+  font-weight: bold;
 }
 
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.tweet-button .fa-angles-down {
+  animation: moveUpDown 1s infinite;
+}

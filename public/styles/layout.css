@@ -19,6 +19,8 @@ body {
   background-color: #f4f1ec;
   font-size: 30px;
   font-family: Source Sans 3;
+ 
+
 }
 
 
@@ -27,12 +29,50 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
  .container {
-  margin-top: 120px; /* Create space for the navbar */
+  margin-top: 120px;
+  margin-right: 10px; /* Create space for the navbar */
  }
 
  main {
-  width: 90%; /* Set the width to 90% of its parent element */
+  width: 95%; /* Set the width to 90% of its parent element */
   margin: 0 auto; /* Center-align the element horizontally */
   background-color: #f4f1ec;
   word-wrap: break-word;
+}
+
+@media (max-width: 1023px) {
+  nav {
+    background-color: #b0c4b1;
+    background-image: url(https://www.transparenttextures.com/patterns/white-brick-wall.png);
+  }
+
+  header {
+    height: 520px;
+    width: 100%;
+  }
+  /* Add your smaller layout styles here */
+}
+@media (min-width: 1024px) {
+  body{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  header {
+    margin: 3%;
+    margin-top: 180px;
+    height: 80%;
+    width: 60%;
+  }
+
+  nav {
+    background-color: #4056A1; /* Default background color */
+  }
+
+  .container {
+    margin-top: 180px; /* Create space for the navbar */
+   }
+
+  
+  /* Add your desktop layout styles here */
 }

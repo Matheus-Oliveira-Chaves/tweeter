@@ -1,6 +1,5 @@
 header {
-  height: 520px; 
-  width: 100%; /* Full width of its parent container */
+  
   background-color: #b0c4b1; /* Replace with your desired background color */
   background-image: url("https://www.transparenttextures.com/patterns/white-brick-wall.png");
   display: flex;

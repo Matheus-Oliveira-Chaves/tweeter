@@ -28,9 +28,13 @@ $(document).ready(function() {
     const $tweet = `
       <article class="tweet">
         <header>
+        <div class="left-side">
           <img class="avatar" src="${escape(tweet.user.avatars)}" />
           <h2 class="name">${escape(tweet.user.name)}</h2>
+        </div>
+        <div class="right-side">
           <span class="handle">${escape(tweet.user.handle)}</span>
+        </div>
         </header>
         <div class="content">
           ${escape(tweet.content.text)}
