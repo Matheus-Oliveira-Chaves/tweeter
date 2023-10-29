@@ -1,12 +1,10 @@
-
 $(document).ready(function () {
-
   $(document).ready(function () {
-    const $errorContainer = $('.error-message');
+    const $errorContainer = $(".error-message");
     $errorContainer.hide();
 
     const showError = function (message) {
-      $errorContainer.html('&#9888; ' + message + ' &#9888;');
+      $errorContainer.html("&#9888; " + message + " &#9888;");
       $errorContainer.slideDown();
     };
 
@@ -35,7 +33,9 @@ $(document).ready(function () {
           ${escape(tweet.content.text)}
         </div>
         <footer>
-          <span class="timestamp">${escape(timeago.format(tweet.created_at))}</span>
+          <span class="timestamp">${escape(
+            timeago.format(tweet.created_at)
+          )}</span>
           <div class="icons">
             <i class="fa fa-flag"></i>
             <i class="fa fa-retweet"></i>
@@ -50,58 +50,52 @@ $(document).ready(function () {
     const renderTweets = function (tweets) {
       for (let tweet of tweets) {
         const $tweet = createTweetElement(tweet);
-        $('.tweets-container').prepend($tweet);
+        $(".tweets-container").prepend($tweet);
       }
     };
 
     const loadTweets = function () {
       $.ajax({
-        url: '/tweets',
-        method: 'GET',
-        dataType: 'json',
+        url: "/tweets",
+        method: "GET",
+        dataType: "json",
         success: function (data) {
           renderTweets(data);
         },
         error: function (error) {
-          console.error('Error fetching tweets:', error);
-        }
+          console.error("Error fetching tweets:", error);
+        },
       });
     };
 
-
-    const $form = $('.tweet-form');
+    const $form = $(".tweet-form");
     $form.submit(function (event) {
       event.preventDefault();
       hideError();
-      const tweetContent = $('#tweet-text').val();
+      const tweetContent = $("#tweet-text").val();
       if (!tweetContent) {
-        showError('Tweet content cannot be empty.');
+        showError("Tweet content cannot be empty.");
         return;
       }
       if (tweetContent.length > 140) {
-        showError('Tweet content exceeds the character limit.');
+        showError("Tweet content exceeds the character limit.");
         return;
       }
       const formData = $(this).serialize();
       $.ajax({
-        type: 'POST',
-        url: '/tweets',
+        type: "POST",
+        url: "/tweets",
         data: formData,
         success: function () {
           loadTweets();
-          $('#tweet-text').val('');
+          $("#tweet-text").val("");
         },
         error: function (error) {
-          console.error('Error posting the tweet', error);
-        }
+          console.error("Error posting the tweet", error);
+        },
       });
     });
 
     loadTweets();
-
-
   });
 });
-
-
-

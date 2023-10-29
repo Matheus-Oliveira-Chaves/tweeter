@@ -3,18 +3,16 @@
   padding: 15px;
   margin: 10px 0 10px 0;
   border-radius: 5px;
-  font-family: 'Source Sans 3';
+  font-family: "Source Sans 3";
   font-weight: bold;
   font-size: 15px;
-  transition: box-shadow 0.3s; 
+  transition: box-shadow 0.3s;
   display: flex;
   flex-direction: column;
-
 }
 
 .tweet .avatar {
   margin: 0;
-  
 }
 
 .tweet header {
@@ -35,10 +33,6 @@
   flex-direction: row;
   align-items: center;
 }
-
-
-
-
 
 .content {
   margin-top: 10px;
@@ -62,27 +56,24 @@
 }
 
 .icons i {
-  color: #4056A1;
+  color: #4056a1;
   margin-left: 10px;
   cursor: pointer;
-  transition: color 0.3s; 
+  transition: color 0.3s;
 }
-
 
 .tweet:hover {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 
 .icons .fa-flag:hover {
-  color: rgba(255, 217, 0, 0.63); 
+  color: rgba(255, 217, 0, 0.63);
 }
 
-
 .icons .fa-heart:hover {
-  color: rgba(255, 217, 0, 0.63); 
+  color: rgba(255, 217, 0, 0.63);
 }
 
 .icons .fa-retweet:hover {
-  color: rgba(255, 217, 0, 0.63); 
+  color: rgba(255, 217, 0, 0.63);
 }

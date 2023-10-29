@@ -1,18 +1,17 @@
 header {
-  
-  background-color: #b0c4b1; 
+  background-color: #b0c4b1;
   background-image: url("https://www.transparenttextures.com/patterns/white-brick-wall.png");
   display: flex;
   flex-direction: column;
-  justify-content: center; 
-  align-items: center; 
+  justify-content: center;
+  align-items: center;
   font-family: "Source Sans 3";
 }
 
-
 .avatar {
-  margin-top: 130px; 
+  margin-top: 130px;
 }
 
 h2 {
-  text-align: center; 
+  text-align: center;
+}
