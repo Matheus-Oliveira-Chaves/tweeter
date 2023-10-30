@@ -87,7 +87,7 @@ $(document).ready(function () {
         success: function () {
           loadTweets();
           $("#tweet-text").val("");
-          
+          $(".counter").text("140");
         },
         error: function (error) {
           console.error("Error posting the tweet", error);
