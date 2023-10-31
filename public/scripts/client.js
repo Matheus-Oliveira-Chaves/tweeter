@@ -1,22 +1,27 @@
-$(document).ready(function () {
-  $(document).ready(function () {
-    const $errorContainer = $(".error-message");
-    $errorContainer.hide();
+$(document).ready(function () { 
+  $(document).ready(function () { 
+    const $errorContainer = $(".error-message"); 
+    $errorContainer.hide(); 
 
+    // Function to display the error message
     const showError = function (message) {
-      $errorContainer.html("&#9888; " + message + " &#9888;");
-      $errorContainer.slideDown();
+      $errorContainer.html("&#9888; " + message + " &#9888;"); // Displaying the error message with an icon
+      $errorContainer.slideDown(); 
     };
 
+    // Function to hide the error message
     const hideError = function () {
-      $errorContainer.slideUp();
+      $errorContainer.slideUp(); 
     };
 
+    // Function to escape insecure text
     const escape = function (str) {
-      let div = document.createElement("div");
-      div.appendChild(document.createTextNode(str));
-      return div.innerHTML;
+      let div = document.createElement("div"); // Creating a new div element
+      div.appendChild(document.createTextNode(str)); // Appending the escaped text to the div
+      return div.innerHTML; // Returning the escaped HTML
     };
+
+    // Function to create a new tweet element
     const createTweetElement = function (tweet) {
       const $tweet = `
       <article class="tweet">
@@ -30,7 +35,7 @@ $(document).ready(function () {
         </div>
       </header>
       <div class="content">
-        ${escape(tweet.content.text)}
+        ${escape(tweet.content.text)} // Using the escape function to prevent XSS
       </div>
       <footer>
         <span class="timestamp">${timeago.format(tweet.created_at)}</span>
@@ -42,60 +47,64 @@ $(document).ready(function () {
       </footer>
     </article>
     `;
-      return $tweet;
+      return $tweet; 
     };
 
+    // Function to render tweets on the page
     const renderTweets = function (tweets) {
-      $(".tweets-container").empty();
+      $(".tweets-container").empty(); // Clearing the existing tweets container
       for (let tweet of tweets) {
-        const $tweet = createTweetElement(tweet);
-        $(".tweets-container").prepend($tweet);
+        const $tweet = createTweetElement(tweet); // Creating the tweet element using the data
+        $(".tweets-container").prepend($tweet); // Prepending the tweet to the tweets container
       }
     };
 
+    // Function to load tweets from the server
     const loadTweets = function () {
       $.ajax({
         url: "/tweets",
         method: "GET",
         dataType: "json",
         success: function (data) {
-          renderTweets(data);
+          renderTweets(data); // Rendering the fetched tweets using the renderTweets function
         },
         error: function (error) {
-          console.error("Error fetching tweets:", error);
+          console.error("Error fetching tweets:", error); // Logging the error when fetching tweets
         },
       });
     };
 
-    const $form = $(".tweet-form");
+    const $form = $(".tweet-form"); // Selecting the tweet form
+    // Event listener for form submission
     $form.submit(function (event) {
-      event.preventDefault();
-      hideError();
-      const tweetContent = $("#tweet-text").val();
+      event.preventDefault(); // Preventing the default form submission behavior (reload page)
+      hideError(); // Hiding the error container
+      const tweetContent = $("#tweet-text").val(); // Getting the value of the tweet text area
       if (!tweetContent) {
-        showError("Tweet content cannot be empty.");
+        showError("Tweet content cannot be empty."); 
         return;
       }
       if (tweetContent.length > 140) {
-        showError("Tweet content exceeds the character limit.");
+        showError("Tweet content exceeds the character limit."); 
         return;
       }
-      const formData = $(this).serialize();
+      const formData = $(this).serialize(); 
+      // Sending the new tweet data to the server
       $.ajax({
         type: "POST",
         url: "/tweets",
         data: formData,
         success: function () {
-          loadTweets();
-          $("#tweet-text").val("");
-          $(".counter").text("140");
+          loadTweets(); // Reloading the tweets after successful submission
+          $("#tweet-text").val(""); // Clearing the tweet text area
+          $(".counter").text("140"); // Resetting the character counter
         },
         error: function (error) {
-          console.error("Error posting the tweet", error);
+          console.error("Error posting the tweet", error); // Logging the error when posting the tweet
         },
       });
     });
 
-    loadTweets();
+    loadTweets(); // Initial loading of tweets on page load
   });
 });
