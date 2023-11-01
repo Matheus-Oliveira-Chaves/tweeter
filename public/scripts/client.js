@@ -35,7 +35,7 @@ $(document).ready(function () {
         </div>
       </header>
       <div class="content">
-        ${escape(tweet.content.text)} // Using the escape function to prevent XSS
+        ${escape(tweet.content.text)}
       </div>
       <footer>
         <span class="timestamp">${timeago.format(tweet.created_at)}</span>
